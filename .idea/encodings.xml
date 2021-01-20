@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/CurrentThreadDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/DaemonThreadDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/JoinDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/PriorityDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/SleepDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/SleepDemo2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/SyncDemo1.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/SyncDemo2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/SyncDemo3.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/SyncDemo4.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/SyncDemo5.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/ThreadDemo1.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/ThreadDemo2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/ThreadDemo3.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Thread1/src/thread/ThreadInfoDemo.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
