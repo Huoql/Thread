@@ -3,8 +3,7 @@ package com.study.stream;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -28,13 +27,28 @@ class User {
 public class StreamDemo {
 
     public static void main(String[] args) {
+
         User u1 = new User(11, "a", 23);
-        User u2 = new User(12, "b", 24);
+        User u2 = new User(11, "b", 24);
         User u3 = new User(13, "c", 22);
         User u4 = new User(14, "d", 28);
-        User u5 = new User(16, "e", 26);
+        User u5 = new User(16, "e", null);
 
         List<User> list = Arrays.asList(u1, u2, u3, u4, u5);
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println(i);
+            try {
+                list.stream().map(user -> {
+                    return Optional.ofNullable(user.getAge()).orElseThrow(NullPointerException::new);
+                }).forEach(System.out::println);
+            } catch (NullPointerException e) {
+                return;
+            }
+        }
+
+        Map<Integer, List<User>> collect = list.stream().collect(Collectors.groupingBy(User::getId));
+        System.out.println(collect);
 
         list.stream().filter(user -> {
             return user.getId() % 2 == 0;
@@ -45,7 +59,6 @@ public class StreamDemo {
         }).sorted((o1, o2) -> {
             return o2.compareTo(o1);
         }).limit(1).forEach(System.out::println);
-
 
 
         //========================================================================

@@ -16,8 +16,8 @@ class Window implements Runnable {
     private int ticket = 100;
 
     /**
-     * new ReentrantLock(true);  创建公平锁  即在竞争环境下，先到临界区的线程比后到的线程一定更快的获取到锁
-     * new ReentrantLock(false); 创建非公平锁 先到临界区的线程未必比后到的线程更快的获取到锁
+     * new ReentrantLock(false);  创建非公平锁  即在竞争环境下，先到临界区的线程比后到的线程一定更快的获取到锁
+     * new ReentrantLock(true); 创建公平锁 先到临界区的线程未必比后到的线程更快的获取到锁
      */
     //1.实例化一个ReentrantLock
     private ReentrantLock lock = new ReentrantLock();

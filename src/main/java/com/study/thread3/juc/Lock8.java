@@ -36,7 +36,7 @@ class Phone {
  * 一个类里面如果有多个synchronized方法，某一时刻内，只要有一个线程去调用其中的一个synchronized方法了，
  * 其他线程只能等待。
  * （换句话说，某一时刻内，只能有唯一一个线程去访问这些synchronized方法，
- * 锁的是当前对象this，被锁定后，其他线程都不能进入到当前对象的其他synchronized方法。）
+ * 锁的是当前对象this，即phone 被锁定后，其他线程都不能进入到当前对象的其他synchronized方法。）
  *
  * 3
  * 加个普通的hello()方法后发现和同步锁无关。
