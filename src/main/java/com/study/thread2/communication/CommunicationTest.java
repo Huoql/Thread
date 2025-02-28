@@ -26,9 +26,10 @@ class Number implements Runnable {
     private int number = 1;
     private Object o = new Object();
 
+    @Override
     public void run() {
         while (true) {
-            synchronized (o) {
+            synchronized (this) {
                 if (number <= 100) {
 
                     this.notify();  //同步监视器必须是同一个

@@ -9,52 +9,52 @@ class Number {
     private Lock lock = new ReentrantLock();
     private Condition condition = lock.newCondition();
 
-    public void increment() throws InterruptedException {
-        lock.lock();
-        try {
-            //1.判断
-            while (number != 0) {
-                condition.await();
-            }
-            //2.干活
-            number++;
-            System.out.println(Thread.currentThread().getName() + ":" + number);
-            //3.通知
-            condition.signalAll();
-        }catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            lock.unlock();
-        }
-    }
-
-    public void decrement() throws InterruptedException {
-        lock.lock();
-        try {
-            //1.判断
-            while (number == 0) {
-                condition.await();
-            }
-            //2.干活
-            number--;
-            System.out.println(Thread.currentThread().getName() + ":" + number);
-            //3.通知
-            condition.signalAll();
-        }catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            lock.unlock();
-        }
-
-    }
-    /*public synchronized void increment() throws InterruptedException {
+    //public void increment() throws InterruptedException {
+    //    lock.lock();
+    //    try {
+    //        //1.判断
+    //        while (number != 0) {
+    //            condition.await();
+    //        }
+    //        //2.干活
+    //        number++;
+    //        System.out.println(Thread.currentThread().getName() + ":" + number);
+    //        //3.通知
+    //        condition.signalAll();
+    //    }catch (Exception e) {
+    //        e.printStackTrace();
+    //    }finally {
+    //        lock.unlock();
+    //    }
+    //}
+    //
+    //public void decrement() throws InterruptedException {
+    //    lock.lock();
+    //    try {
+    //        //1.判断
+    //        while (number == 0) {
+    //            condition.await();
+    //        }
+    //        //2.干活
+    //        number--;
+    //        System.out.println(Thread.currentThread().getName() + ":" + number);
+    //        //3.通知
+    //        condition.signalAll();
+    //    }catch (Exception e) {
+    //        e.printStackTrace();
+    //    }finally {
+    //        lock.unlock();
+    //    }
+    //
+    //}
+    public synchronized void increment() throws InterruptedException {
         //1.判断
-//        if(number != 0) {
-//            wait();
-//        }
-        while (number != 0) {
+        if(number != 0) {
             wait();
         }
+//        while (number != 0) {
+//            wait();
+//        }
         //2.干活
         number++;
         System.out.println(Thread.currentThread().getName() + ":" + number);
@@ -64,18 +64,18 @@ class Number {
 
     public synchronized void decrement() throws InterruptedException {
         //1.判断
-//        if(number == 0) {
-//            wait();
-//        }
-        while (number == 0) {
+        if(number == 0) {
             wait();
         }
+        //while (number == 0) {
+        //    wait();
+        //}
         //2.干活
         number--;
         System.out.println(Thread.currentThread().getName() + ":" + number);
         //3.通知
         notifyAll();
-    }*/
+    }
 }
 /**
  * 两个线程，可以操作初始值为0的一个变量，
@@ -116,7 +116,7 @@ public class ThreadWaitNofityDemo {
                 }
             }
         }, "B").start();
-
+        //
         //多加两个线程看输出结果，问题：虚假唤醒
         new Thread(() -> {
             for (int i = 0; i < 10; i++) {

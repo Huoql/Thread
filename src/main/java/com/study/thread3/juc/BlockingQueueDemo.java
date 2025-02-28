@@ -23,20 +23,20 @@ public class BlockingQueueDemo {
          * 当阻塞队列满时，再执行add插入元素会抛IllegalStateException:Queue fill
          * 当阻塞队列空时，再执行remove移除元素会抛NoSuchElementException
          */
-        /*System.out.println(blockingQueue.add("a"));
-        System.out.println(blockingQueue.add("b"));
-        System.out.println(blockingQueue.add("c"));
-
-//        System.out.println(blockingQueue.add("d"));
-
-        System.out.println(blockingQueue.element());
-
-        System.out.println(blockingQueue.remove());
-        System.out.println(blockingQueue.remove());
-        System.out.println(blockingQueue.remove());
-
+//        System.out.println(blockingQueue.add("a"));
+//        System.out.println(blockingQueue.add("b"));
+//        System.out.println(blockingQueue.add("c"));
+//
+////        System.out.println(blockingQueue.add("d"));
+//
+//        System.out.println(blockingQueue.element());
+//
 //        System.out.println(blockingQueue.remove());
-        */
+//        System.out.println(blockingQueue.remove());
+//        System.out.println(blockingQueue.remove());
+//
+////        System.out.println(blockingQueue.remove());
+
 
         /**
          * 特殊值

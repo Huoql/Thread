@@ -22,7 +22,7 @@ public class TestTransferValue {
 
         Person person = new Person("abc");
         test.changeValue2(person);
-        System.out.println("name----------" + person.getName());
+        System.out.println("name---------" + person.getName());
 
         String str = "abc";
         test.changeValue3(str);
